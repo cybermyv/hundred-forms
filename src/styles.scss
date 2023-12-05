@@ -1,0 +1,23 @@
+@use '@angular/material' as mat;
+@include mat.core();
+
+$ds-primary: mat.define-palette(mat.$blue-palette);
+$ds-accent: mat.define-palette(mat.$blue-palette, A200, A100, A400);
+$ds-warn: mat.define-palette(mat.$red-palette);
+
+$ds-theme: mat.define-light-theme(
+    (
+      color: (
+        primary: $ds-primary,
+        accent: $ds-accent,
+        warn: $ds-warn,
+      ),
+    )
+);
+
+@include mat.all-component-themes($ds-theme);
+@import "https://fonts.googleapis.com/icon?family=Material+Icons";
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
